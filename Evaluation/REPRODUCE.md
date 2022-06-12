@@ -58,23 +58,27 @@ After the argument parser, at the top of the script there are 4 variables: `expe
 `experiments_models_age_ml1m`, `experiments_models_gender_lfm1k`, `experiments_models_age_lfm1k`. They have been already
 described in above parameters and are related to the predictions of the two datasets and two sensitive_attributes.
 Each one of these variables is a list of tuples, where each tuple contains the following values in order:
+Attributes of each value of the following arrays in order:
 - `target`: `Ranking` (top-n recommendation) or `Rating` (rating prediction), it is the prediction target,
 - `paper`: name or nickname that identify the related paper,
 - `model name`: the model to which the fairness approach is applied or the new name of a fairness-aware baseline,
                 e.g. ParityLBM, BN-SLIM-U.
 - `path`: it can be
     - a full path
-    - a list of paths (e.g. Ekstrand et al. experiments contain multiple runs, the paths of the predictions need to be in
-      a list)
+    - a list of paths (e.g. Ekstrand et al. experiments contain multiple runs, the paths of the predictions need to be
+      in a list)
     - callable that returns paths as a list, even with one only path (not used, but it is supported)
 - `baseline`: it can be
     - same as `path` but for the baseline
     - a tuple where the first value is the same for `path` and the second value is the specific name of the baseline,
     (e.g. GCN, SLIM-U), otherwise the string *baseline* will be added at the end of `model name`,
-- `function to retrieve data` (OPTIONAL): function to read the file containing the predictions (it should be one of the 
-   functions of the class RelevanceMatrix that start with `from_...` inside [models\utils.py](../models/utils.py))
-- `function to retrieve baseline data` (OPTIONAL): the same for `function to retrieve data (OPTIONAL)` but for the
-   baseline predictions
+ - function or tuple to retrieve data (OPTIONAL): function to read the file with predictions (use one of the functions
+                                                  of the class RelevanceMatrix that start with `from_...` inside
+                                                  `models\utils.py`. If it is a tuple the first must be the function
+                                                  just described and the second a list of arguments to pass to the
+                                                  load function
+- function or tuple to retrieve baseline data (OPTIONAL): the same for `function to retrieve data (OPTIONAL)`
+                                                 but for the baseline
    
 ## Functionality
 
@@ -92,4 +96,19 @@ divided by the considered dataset (each plot or table file will have the analyze
 
 The script does not re-compute metrics for the papers and models already present in the related *results* file. To
 re-compute the metrics you need to delete the *results* and *stats* files of the selected dataset and sensitive attribute.
+
+## Transferability Evaluation
+
+The transferability of Ekstrand et al.'s method on Li et al.'s models need to modify the row of the function to retrieve the data
+of the mitigation predictions. Since Ekstrand et al. works on 5 folds of cross-validation, the function to read the predictions of
+BiasedMF, PMF, NCF and STAMP needs the test file of each fold as additional parameter.
+The following lines show an example to prepare the experiments for transferability tasks:
+
+```python
+('Ranking', 'User-oriented fairness', 'PMF',
+sorted([x.path for x in os.scandir(r"D:\Reproducibility Study\All the cool kids on Baselines and MItigation\Last.FM 1K\Li et al\PMF\Age")]),
+r"D:\Baselines and Mitigation Results\Last.FM 1K\Li et al\PMF\11_PMF~1.NPY",
+(RelevanceMatrix.from_nlr_models_result, [[x] for x in sorted([x.path for x in os.scandir(r"D:\Reproducibility Study\All the cool kids on Baselines and MItigation\Last.FM 1K\Li et al\test files\Age")])]),
+RelevanceMatrix.from_nlr_models_result),
+```
 

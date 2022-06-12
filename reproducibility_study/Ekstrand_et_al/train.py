@@ -237,7 +237,7 @@ if __name__ == "__main__":
                 bal_orig_train, bal_test = ekstrand_balance(orig_train, test, dataset_metadata)
 
                 if use_external_code.lower() == "librec":
-                    librec_path = r'C:\Users\Giacomo\Desktop\University\Dottorato di Ricerca\Idee paper - Progetti\Reproducibility Study\Librec-auto'
+                    librec_path = r'LIBREC_AUTO_PATH'
 
                     librec_models = ['User-User_Explicit', 'User-User', 'Item-Item', 'SVD++_Explicit', 'SVD++_Implicit']
                     librec_paths = ['User-User_Explicit', 'User-User', 'Item-Item', os.path.join('SVD++', 'Explicit'), os.path.join('SVD++', 'Implicit')]

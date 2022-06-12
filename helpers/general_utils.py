@@ -1,9 +1,12 @@
+import time
 from typing import Dict, Text, List
 from collections import defaultdict
 
 import numpy as np
 import pandas as pd
 import ast
+
+from .logger import RcLogger
 
 
 def percentage_difference(a, b):
@@ -23,6 +26,17 @@ def dicts_sum(*dicts):
     for d in dicts:
         for k, v in d.items():
             out_dict[k] += v
+    return dict(out_dict)
+
+
+def dicts_mean(*dicts):
+    out_dict = defaultdict(list)
+    for d in dicts:
+        for k, v in d.items():
+            out_dict[k] += [v]
+    for k in out_dict:
+        out_dict[k] = np.mean(out_dict[k])
+
     return dict(out_dict)
 
 
@@ -62,3 +76,15 @@ def convert_dataframe_str_to_bytestr_cols_index(df: pd.DataFrame):
 
 def check_multiple(arr: List):
     assert len(arr) == 2, "Cannot check multiple on list longer than 2"
+
+
+def measure_time(func_to_measure):
+    def wrapper(*args, **kwargs):
+        start = time.perf_counter()
+        res = func_to_measure(*args, **kwargs)
+        RcLogger.get().info(f"{func_to_measure.__name__} time execution: "
+                            f"{time.strftime('%H:%M:%S', time.gmtime(time.perf_counter() - start))} seconds")
+
+        return res
+
+    return wrapper

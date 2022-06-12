@@ -112,18 +112,10 @@ to generate. This can be done adding one or more of the following parameters tha
   the folder **reproducibility_study/Preprocessing/input_data/DATASET/Li et al/NLR**
 - `--create_co_clustering_for_fair_input_data`: it creates the input data for the reproduced algorithm of *Frisch et al*,
   which will be saved in the folder **reproducibility_study/Preprocessing/input_data/DATASET/Frisch et al**
-- `--create_fairgo_input_data`: it creates the input data for the reproduced algorithm of *Wu et al*,
-  which will be saved in the folder **reproducibility_study/Preprocessing/input_data/DATASET/Wu et al**
 - `--create_all_the_cool_kids_input_data`: it creates the input data for the reproduced algorithm of *Ekstrand et al*,
   which will be saved in the folder **reproducibility_study/Preprocessing/input_data/DATASET/Ekstrand et al**
-- `--create_rec_independence_input_data`: it creates the input data for the reproduced algorithm of *Kamishima et al*,
-  which will be saved in the folder **reproducibility_study/Preprocessing/input_data/DATASET/Kamishima et al**
-- `--create_antidote_data_input_data`: it creates the input data for the reproduced algorithm of *Rastegarpanah et al*,
-  which will be saved in the folder **reproducibility_study/Preprocessing/input_data/DATASET/Rastegarpanah et al**
 - `--create_librec_auto_input_data`: it creates the input data for the reproduced algorithm of *Burke et al*,
   which will be saved in the folder **reproducibility_study/Preprocessing/input_data/DATASET/Burke et al**
-- `--create_rating_prediction_fairness_input_data`: it creates the input data for the reproduced algorithm of *Ashokan and Haas*,
-  which will be saved in the folder **reproducibility_study/Preprocessing/input_data/DATASET/Ashokan and Haas**
   
 The term **DATASET** inside the paths will be one of [`movielens_1m`, `filtered(20)_lastfm_1K`].
 

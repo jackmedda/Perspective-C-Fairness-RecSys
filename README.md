@@ -1,11 +1,6 @@
 # Consumer Fairness in Recommender Systems: Contextualizing Definitions and Mitigations
 ![reproducibility task](research_method.jpg)
 
-This is the repository for the paper *Consumer Fairness in Recommender Systems: Contextualizing Definitions and Mitigation*,
-developed by Giacomo Medda, PhD student at University of Cagliari, with the support of [Gianni Fenu](https://unica.it/unica/it/ateneo_s07_ss01.page?contentId=SHD30371),
-Full Professor at University of Cagliari, [Mirko Marras](https://www.mirkomarras.com/), Non-tenure Track Assistant Professor at University of Cagliari,
-and [Ludovico Boratto](https://www.ludovicoboratto.com/), Tenure Track Assistant Professor at University of Cagliari.
-
 The goal of the paper was to find a common understanding and practical benchmarks on how and when each procedure of consumer
 fairness in recommender systems can be used in comparison to the others.
 
@@ -15,14 +10,10 @@ fairness in recommender systems can be used in comparison to the others.
 
   This is the directory that contains the source code of each reproduced paper identified by the author names of the respective paper.
 
-    - **Ashokan and Haas**: *Fairness metrics and bias mitigation strategies for rating predictions*
     - **Burke et al**: *Balanced Neighborhoods for Multi-sided Fairness in Recommendation*
     - **Ekstrand et al**: *All The Cool Kids, How Do They Fit In. Popularity and Demographic Biases in Recommender Evaluation and Effectiveness*
     - **Frisch et al**: *Co-clustering for fair recommendation*
-    - **Kamishima et al**: *Recommendation Independence*
     - **Li et al**: *User-oriented Fairness in Recommendation*
-    - **Rastegarpanah et al**: *Fighting Fire with Fire. Using Antidote Data to Improve Polarization and Fairness of Recommender Systems*
-    - **Wu et al**: *Learning Fair Representations for Recommendation. A Graph-based Perspective*
   
 - ### [Preprocessing](Preprocessing)
 

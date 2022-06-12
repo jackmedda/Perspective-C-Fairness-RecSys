@@ -1,3 +1,0 @@
-include readme.md
-recursive-include data *
-recursive-include kamiers *.md
