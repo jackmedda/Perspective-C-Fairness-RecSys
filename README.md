@@ -1,5 +1,4 @@
-# Consumer Fairness in Recommender Systems: Contextualizing Definitions and Mitigations
-![reproducibility task](research_method.jpg)
+# Practical Perspectives of Consumer Fairness in Recommendation
 
 The goal of the paper was to find a common understanding and practical benchmarks on how and when each procedure of consumer
 fairness in recommender systems can be used in comparison to the others.
@@ -90,17 +89,3 @@ of Python (2, 3, 3.7) and a virtual environment for each paper will maintain a g
 Virtual environments can be created in different ways depending on the Python version and on the system. The
 [Python Documentation](https://docs.python.org/3/library/venv.html) describes the creation of virtual environments for
 Python >= 3.5, while the [virtualenv Website](https://virtualenv.pypa.io/en/latest/index.html) can be used for Python 2.
-
-# Results
-
-## Top-N Recommendation Gender
-![Top-N Recommendation Gender](results/NDCG_gender.png)
-
-## Top-N Recommendation Age
-![Top-N Recommendation Age](results/NDCG_age.png)
-
-## Rating Prediction Gender
-![Rating Prediction Gender](results/RMSE_gender.png)
-
-## Rating Prediction Age
-![Rating Prediction Age](results/RMSE_age.png)

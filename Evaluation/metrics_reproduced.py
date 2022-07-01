@@ -1726,13 +1726,16 @@ def results_to_paper_table_fused_datasets():
     for ut, ut2_or_fair, targ in [["ndcg", "ks", "Ranking"], ["ndcg", "f1_score", "Ranking"], ["f1_score", ("epsilon_fairness", "fair"), "Ranking"]]:
         out_dfs = []
 
-        if not results_ml1m[ut] and not results_lfm1k[ut]:
+        if ut not in results_ml1m and ut not in results_lfm1k:
             continue
 
         is_fair = False
         if not isinstance(ut2_or_fair, str):
             is_fair = True
             ut2_or_fair = ut2_or_fair[0]
+
+        if ut2_or_fair not in results_ml1m and ut2_or_fair not in results_lfm1k:
+            continue
 
         for dataset, results, stats, exps_models_gender, exps_models_age in [
             ("ML1M", results_ml1m, stats_ml1m, experiments_models_gender_ml1m, experiments_models_age_ml1m),
@@ -2243,7 +2246,10 @@ def tradeoff_results_to_paper_table_fused_datasets():
     for ut, ut2_or_ks, targ in [["ndcg", "ks", "Ranking"], ["ndcg", "f1_score", "Ranking"]]:
         out_dfs = []
 
-        if not results_ml1m[ut] and not results_lfm1k[ut]:
+        if ut not in results_ml1m and ut not in results_lfm1k:
+            continue
+
+        if ut2_or_ks not in results_ml1m and ut2_or_ks not in results_lfm1k:
             continue
 
         for dataset, results, stats, exps_models_gender, exps_models_age in [
