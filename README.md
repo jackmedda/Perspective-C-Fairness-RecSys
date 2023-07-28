@@ -4,7 +4,11 @@ The goal of the paper was to find a common understanding and practical benchmark
 fairness in recommender systems can be used in comparison to the others.
 
 If this repository is useful for your research, we would appreciate an acknowledgment by citing our [Information Processing & Management paper](https://doi.org/10.1016/j.ipm.2022.103208):
-> Boratto, L., Fenu, G., Marras, M., & Medda, G. (2023). Practical perspectives of consumer fairness in recommendation. Information Processing & Management, 60(2), 103208.
+```
+Boratto, L., Fenu, G., Marras, M., & Medda, G. (2023).
+Practical perspectives of consumer fairness in recommendation.
+Information Processing & Management, 60(2), 103208.
+```
 
 ## Repository Organization
 
